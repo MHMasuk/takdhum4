@@ -1,0 +1,7 @@
+{% extends 'takdhum/profile/base_profile.html' %}
+
+{% block profile_info %}
+   {% for videos in watch %}
+       <p>{{ videos.vedio }}</p>
+    {% endfor %}
+{% endblock %}

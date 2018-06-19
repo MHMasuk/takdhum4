@@ -1,0 +1,61 @@
+{% extends 'takdhum/profile/base_profile.html' %}
+
+{% block profile_info %}
+    <div class="uv-student-courses-overview">
+        <h3>COURSES</h3>
+        <ul>
+            {% if user_course_list %}
+                {% for course_list in user_course_list %}
+                    <li>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <a href="{% url 'single_course' category=course_list.taken_category_url course=course_list.taken_course_url %}">
+                                    <div class="course-feature-img">
+                                        <img src="{{ course_list.taken_course_image.url }}" alt=""
+                                             class="img-responsive">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="uv-std-course-info">
+                                    <a href="{% url 'single_course' category=course_list.taken_category_url course=course_list.taken_course_url %}">
+                                        <h4>{{ course_list.taken_course_title }}</h4></a>
+                                    <span><small>Course Category - <a
+                                            href="{% url 'single_category' category=course_list.taken_category_url %}"> {{ course_list.taken_course_category }}</a></small></span>
+                                    <br/><span><small>Course Taken: {{ course_list.taken_time|timesince }} ago</small></span>
+                                    {% if course_list.watch_video.first %}
+                                    <h4>Watch Video:</h4>
+                                        <p>{{ course_list.watch_video.first }}</p>
+                                        <a href="{% url 'watch_vedio' course_watch=course_list.taken_course_url %}">view all</a>
+
+{#                                    {% for vedio in watch_video %}#}
+{#                                        {{ vedio.vedio }}#}
+{#                                        {% endfor %}#}
+{#                                    <br/><span><small>Last visited: {{ course_list.last_visited|timesince }} ago</small></span>#}
+                                    {% endif %}
+                                    <br/><br/><a href="{% url 'delete_course' user=request.user pk=course_list.pk %}" class="btn btn-danger view-full-event"> Remove</a>
+{#                                    <div class="uv-std-course-review">#}
+                                        <!--
+                                        <ul>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                        -->
+{#                                    </div>#}
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <h4>OOh! You don't take any course yet.</h4>
+                <h4>Take a course now <a href="{% url 'all_course' %}" class="btn btn-base view-full-event"> View
+                    Course</a></h4>
+
+            {% endif %}
+        </ul>
+    </div>
+{% endblock %}

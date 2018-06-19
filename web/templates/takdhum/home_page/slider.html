@@ -1,0 +1,80 @@
+{% load staticfiles %}
+{% block css %}
+    <style>
+    .owl-controls {
+        display: none !important;
+    }
+
+    .slide-text {
+        color: #333333 !important;
+    }
+
+    .slide-text h1 {
+        color: #333333 !important;
+    }
+    </style>
+{% endblock css %}
+<!--
+|========================
+|   SLIDER CONTENT
+|========================
+-->
+<section class="header-slider header-slider-preloader" id="header-slider">
+    <div class="animation-slides owl-carousel owl-theme" id="animation-slide">
+
+
+        {% for s in slides %}
+         <!--Slide 1-->
+            <div style="background-image:url({{ s.slide_image.url }})" class="item">
+                <div class="slide-table">
+                    <div class="slide-tablecell">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-7 col-xs-12">
+                                    <div class="slide-text">
+                                        <span>{{ s.small_text }}</span>
+                                        <h1>{{ s.big_text }}</h1>
+                                        <p>{{ s.paragraph }}</p>
+                                        <div class="slide-buttons">
+                                            <a href="{% url 'all_course' %}" class="slide-btn btn btn-base">Start Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+
+
+            <!--Slide 3-->
+            <!--<div style="background-image:url({% static 'takdhum/assets/images/header-bg-1.jpg' %})" class="item">-->
+                <!--<div class="slide-table">-->
+                    <!--<div class="slide-tablecell">-->
+                        <!--<div class="container">-->
+                            <!--<div class="row">-->
+                                <!--<div class="col-md-7">-->
+                                    <!--<div class="slide-text">-->
+                                        <!--<span>20 march 2017</span>-->
+                                       <!--<h1>ARE YOU READY <br> TO APPLY?</h1>-->
+                                           <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore</p>-->
+                                        <!--<div class="slide-buttons">-->
+                                            <!--<a href="#" class="slide-btn btn btn-base">Get Start Now</a>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+    </div>
+
+    <!-- Preloader -->
+    <div class="slider_preloader">
+        <div class="slider_preloader_status">&nbsp;</div>
+    </div>
+</section>

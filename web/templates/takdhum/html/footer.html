@@ -1,0 +1,121 @@
+{% load staticfiles %}
+<!--
+        |========================
+        |  footer
+        |========================
+        -->
+<footer class="uv-footer footer-bg section-separator">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="footer-item">
+
+                    <h6>Contact Us</h6>
+                    {% if info.office_address %}
+                        <address>{{ info.office_address }}</address>
+                    {% else %}
+                        <address>Hourse 540/1, Road-8, West Nakhalpara, Dhaka, Bangladesh</address>
+                    {% endif %}
+
+                    {% comment %}
+                            <ul>
+                                <li><a href="#"><i class="fa fa-phone"></i>{{ info.phone_1 }}</a></li>
+                                {% if info.phone_2 %}
+                                <li><a href="#"><i class="fa fa-phone"></i>{{ info.phone_2 }}</a></li>
+                                {% endif %}
+                                <li><a href="#"><i class="fa fa-envelope-o"></i>{{ info.email }}</a></li>
+                            </ul>
+
+
+                            <ul class="social">
+                                <li><a href="{{ info.facebook_link }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="{{ info.google_plus_link }}" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="{{ info.youtube_link }}" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                            </ul>
+                            {% endcomment %}
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="footer-item uv-program">
+                    <ul>
+                        {% if info.phone_1 %}
+                            <li><a href="#"><i class="fa fa-phone"></i>{{ info.phone_1 }}</a></li>
+                            {% if info.phone_2 %}
+                                <li><a href="#"><i class="fa fa-phone"></i>{{ info.phone_2 }}</a></li>
+                            {% endif %}
+                            <li><a href="#"><i class="fa fa-envelope-o"></i>{{ info.email }}</a></li>
+                        {% else %}
+                            <li><a href="#"><i class="fa fa-phone"></i>+8801714016515</a></li>
+                            <li><a href="#"><i class="fa fa-envelope-o"></i>info@takdhum.com</a></li>
+                        {% endif %}
+                    </ul>
+
+                    <ul class="social">
+
+                        <li><a href="{{ info.facebook_link }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="{{ info.google_plus_link }}" target="_blank"><i class="fa fa-google-plus"></i></a>
+                        </li>
+                        <li><a href="{{ info.youtube_link }}" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+
+                    {% comment %}
+                            <h6>Our Company</h6>
+                            <ul>
+                                <li><a href="{% url 'about_page' %}">About Us</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="{% url 'all_course' %}">Courses</a></li>
+                                <li><a href="#">Our Mission</a></li>
+                                <li><a href="#">Our History</a></li>
+                                <li><a href="#">Trams & Condition</a></li>
+                            </ul>
+                            {% endcomment %}
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="footer-item">
+                    <h6>Newsletter</h6>
+                    <p>Enter your email and we'll send you more information of courses and scholarship.</p>
+
+                    {% comment %}
+                            <h6>Our Courses</h6>
+                            <ul>
+                                {% for c in categories %}
+                                    <li><a href="{% url 'single_category' category=c.category_url %}">{{ c.category_name }} Courses</a></li>
+                                {% endfor %}
+                                <li><a href="{% url 'all_course' %}">All Courses</a></li>
+                                <li><a href="{% url 'popular_course' %}">Popular Courses</a></li>
+                                <li><a href="{% url 'recent_course' %}">Resent Courses</a></li>
+                            </ul>
+                            {% endcomment %}
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+                <div class="footer-item">
+
+                    <form class="uv-form footer-form" method="post" action="{% url 'subcriber' %}">
+                        {% csrf_token %}
+                        <div class="form-group relative">
+                            <div class="relative">
+                                <input type="text" class="form-control" name="subcriber_email" id="id_subcriber_email"
+                                       placeholder="Email Address" required>
+                            </div>
+                        </div>
+                        <div class="footer-subs-btn">
+                            <button type="submit" class="btn btn-base" value="subscribe">Subcribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <hr class="f-hr">
+        <div class="row">
+            <div class="uv-copyright center wow fadeInUp" data-wow-delay="0.5s">
+                <p>Takdhum © Copyright 2018. All rights reserved.
+                    <!--Developed by <a href="http://www.denarycomputing.com/" target="_blank">Denary Computing Limited</a> -->
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,14 @@
+{% extends 'takdhum/single_course.html' %}
+
+{% block vedio %}
+{#    <div class="progress mb-3">#}
+{#        <div class="progress-bar" role="progressbar" aria-valuenow="{{ progress }}" aria-valuemin="0"#}
+{#             aria-valuemax="100" style="width: {{ progress }}%"></div>#}
+{#    </div>#}
+    <h4>{{ single_video.video_title }}</h4>
+    <br/>
+    <iframe width="90%" height="428"
+            src="{{ single_video.video_link }}?modestbranding=1&autoplay=1&loop=1&rel=0&showinfo=1" frameborder="0"
+            allowfullscreen></iframe>
+    <br/>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'takdhum/profile/base_profile.html' %}
+
+{% block profile_info %}
+
+    <div class="uv-student-courses-overview">
+        <h3>{{ course }}</h3>
+        <ul>
+                <li>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="uv-std-course-info">
+                                <h6>Total Questions: {{ question }}</h6>
+                                <h6>Question Answered: {{ answer }}</h6>
+                                <h6>Your Score: {{ score }}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+        </ul>
+    </div>
+
+{% endblock %}

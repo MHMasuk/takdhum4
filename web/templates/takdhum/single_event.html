@@ -1,0 +1,343 @@
+{% extends 'takdhum/html/base.html' %}
+{% load staticfiles %}
+
+{% block title %} {{ title }} {% endblock title %}
+{% block meta %}
+<!-- Meta -->
+<meta charset="utf-8">
+<meta name="description" content="{{ single_event.title }}" />
+<meta name="keywords" content="Takdhum Event {{ single_event.title }}" />
+<meta name="developer" content="Md. Mohaymenul Islam">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+{% endblock meta %}
+
+{% block css %}
+<style>
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+</style>
+{% endblock css %}
+
+{% block body %}
+
+<!--<h4>This is working!</h4>-->
+<h3 style="text-align:center">Event: {{ single_event.title }}</h3>
+<h6 style="text-align:center">{{ single_event.upload_time|timesince }} ago at {{ single_event.location }}</h6>
+
+<div class="container">
+<div class="row">
+  {% if single_event.gallery_image1 %}
+  <div class="column">
+    <img src="{{ single_event.gallery_image1.url }}" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  {% endif %}
+  {% if single_event.gallery_image2 %}
+  <div class="column">
+    <img src="{{ single_event.gallery_image2.url }}" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  {% endif %}
+  {% if single_event.gallery_image3 %}
+  <div class="column">
+    <img src="{{ single_event.gallery_image3.url }}" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  {% endif %}
+  {% if single_event.gallery_image4 %}
+  <div class="column">
+    <img src="{{ single_event.gallery_image4.url }}" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+  {% endif %}
+</div>
+<br/>
+
+<div class="row">
+  {% if single_event.gallery_image5 %}
+  <div class="column">
+    <img src="{{ single_event.gallery_image5.url }}" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  {% endif %}
+  {% if single_event.gallery_image6 %}
+  <div class="column">
+    <img src="{{ single_event.gallery_image6.url }}" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  {% endif %}
+  {% if single_event.gallery_image7 %}
+  <div class="column">
+    <img src="{{ single_event.gallery_image7.url }}" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  {% endif %}
+  {% if single_event.gallery_image8 %}
+  <div class="column">
+    <img src="{{ single_event.gallery_image8.url }}" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+  {% endif %}
+</div>
+<br/>
+<div class="row">
+
+  {% if single_event.gallery_image9 %}
+  <div class="column">
+    <img src="{{ single_event.gallery_image9.url }}" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  {% endif %}
+  {% if single_event.gallery_image10 %}
+  <div class="column">
+    <img src="{{ single_event.gallery_image10.url }}" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  {% endif %}
+  {% if single_event.gallery_image11 %}
+  <div class="column">
+    <img src="{{ single_event.gallery_image11.url }}" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  {% endif %}
+  {% if single_event.gallery_image12 %}
+  <div class="column">
+    <img src="{{ single_event.gallery_image12.url }}" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+  {% endif %}
+</div>
+</div>
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+  {% if single_event.gallery_image1 %}
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="{{ single_event.gallery_image1.url }}" style="width:100%">
+    </div>
+  {% endif %}
+  {% if single_event.gallery_image2 %}
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="{{ single_event.gallery_image2.url }}" style="width:100%">
+    </div>
+  {% endif %}
+  {% if single_event.gallery_image3 %}
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="{{ single_event.gallery_image3.url }}" style="width:100%">
+    </div>
+{% endif %}
+  {% if single_event.gallery_image4 %}
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="{{ single_event.gallery_image4.url }}" style="width:100%">
+    </div>
+{% endif %}
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+  {% if single_event.gallery_image1 %}
+    <div class="column">
+      <img class="demo cursor" src="{{ single_event.gallery_image1.url }}" style="width:100%" onclick="currentSlide(1)" alt="{{ single_event.gallery_image1 }}">
+    </div>
+    {% endif %}
+  {% if single_event.gallery_image2 %}
+    <div class="column">
+      <img class="demo cursor" src="{{ single_event.gallery_image2.url }}" style="width:100%" onclick="currentSlide(2)" alt="{{ single_event.gallery_image2 }}">
+    </div>
+    {% endif %}
+  {% if single_event.gallery_image3 %}
+    <div class="column">
+      <img class="demo cursor" src="{{ single_event.gallery_image3.url }}" style="width:100%" onclick="currentSlide(3)" alt="{{ single_event.gallery_image3 }}">
+    </div>
+    {% endif %}
+  {% if single_event.gallery_image4 %}
+    <div class="column">
+      <img class="demo cursor" src="{{ single_event.gallery_image4.url }}" style="width:100%" onclick="currentSlide(4)" alt="{{ single_event.gallery_image4 }}">
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+<br/>
+<br/>
+
+<script>
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+{% endblock body %}
+
+
+{% block script %}
+<!-- init -->
+<script src="{% static "takdhum/assets/js/init.js" %}"></script>
+
+{% endblock script %}

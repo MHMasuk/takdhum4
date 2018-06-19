@@ -1,0 +1,69 @@
+{% extends 'takdhum/html/base.html' %}
+{% load staticfiles %}
+
+{% block title %} Search {% endblock title %}
+
+{% block body %}
+
+    <section class="uv-course-archive">
+        <div class="container">
+
+            <!--Search course-->
+            {% include 'takdhum/course_search.html' %}
+
+            <!--End search course-->
+            <div class="row">
+                <div class="uv-courses-2">
+                    <div class="">
+                        {% if filter.qs %}
+                            {% for c in filter.qs %}
+
+                                <div class="col-md-3 col-sm-6">
+
+                                    <div class="uv-courese-single-thumb uv-shadow">
+                                        <div class="uv-post-img">
+                                            <img src="{{ c.thumbnail_image.url }} " alt="" class="img-responsive">
+                                            <div class="uv-post-author">
+                                                <span>Takdhum</span>
+                                            </div>
+                                        </div>
+                                        <div class="uv-course-thumb-inner">
+                                            <a href="{% url 'single_course' category=c.course_category.category_url course=c.course_url %}">
+                                                <h4>{{ c.course_title|truncatewords:6 }}</h4></a>
+                                            <!--<p><span>{{ c.course_category.category_name }}</span>  <del>$280</del></p> -->
+                                        </div>
+
+                                        <ul class="course-info-2">
+                                            <li class="course-info-2">
+                                                <i class="fa fa-users"></i>
+                                                <span><a
+                                                        href="{% url 'single_category' category=c.course_category.category_url %}">{{ c.course_category.category_name }}</a></span>
+                                            </li>
+                                            <li class="uv-course-rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <h4>{{ search_item }} Your search item is not found.</h4>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block script %}
+    <!-- init -->
+    <script src="{% static "takdhum/assets/js/init.js" %}"></script>
+
+{% endblock script %}

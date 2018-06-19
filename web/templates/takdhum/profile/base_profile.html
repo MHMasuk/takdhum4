@@ -1,0 +1,99 @@
+{% extends 'takdhum/html/base.html' %}
+{% load staticfiles %}
+
+{% block title %} {{ user.username|title }} {% endblock title %}
+{% block body %}
+    <section class="uv-subpage-heading image-bg"
+             style="background-image: url({% static 'takdhum/assets/images/sub-banner.jpg' %});">
+        <div class="overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="uv-subhead-content col-xs-12">
+                        <h2>{{ user.username|title }} Profile </h2>
+                        <span>Welcome to Takdhum Online Art School</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="uv-pagination">
+        <div class="container">
+            <ul>
+                <li class="active"><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'user_profile' user.username %}">Profile</a></li>
+            </ul>
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+
+    <section class="uv-profile">
+        <div class="container">
+            <div class="row section-separator">
+                <div class="col-sm-4 uv-sidebar uv-student-profile-sidebar">
+                    <div class="uv-widget">
+                        <div class="uv-student-avatar">
+                            <figure>
+                                {% if user.profile.profile_picture %}
+                                    <img src="{{ user.profile.profile_picture.url }}" alt="">
+                                {% endif %}
+                            </figure>
+                        </div>
+                        <div class="uv-student-info">
+
+                            <h5>{{ user.username }}</h5>
+                            <p>STUDENT ID</p>
+                            <label>1000{{ user.pk }}</label>
+                        </div>
+                        <div class="uv-student-infor-inner">
+                            <h6>Institute</h6>
+
+                            <span>{{ user.profile.institute }}</span>
+
+                        </div>
+                    </div>
+
+                    <div class="uv-widget no-side-padding">
+                        <div class="uv-student-nav">
+                            <ul>
+                                <li class="active"><a href="{% url 'user_profile' username=request.user %}"><i
+                                        class="fa fa-user-circle-o gt-color"></i>My Profile</a></li>
+                                <li><a href="{% url 'my_course' user=request.user %}"><i class="fa fa-bookmark"></i>My
+                                    Courses</a></li>
+                                <li><a href="{% url 'student-answer' username=request.user %}"><i class="fa fa-calendar"></i>My taken quiz</a></li>
+                                <!--<li><a href="#"><i class="fa fa-calendar"></i>Classes</a></li>
+                                <li><a href="#"><i class="fa fa-heart gt-color"></i>My Favorites</a></li>-->
+                                <li><a href="{% url 'update_profile' %}"><i class="fa fa-gears"></i>Profile Setting</a>
+                                </li>
+                                <li><a href="{% url 'password_change' %}"><i class="fa fa-lock"></i>Change password</a>
+                                </li>
+                                <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i>Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="uv-sudent-profile-info">
+                        {% block profile_info %}
+
+                        {% endblock %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+
+{% block script %}
+    <!-- init -->
+    <script src="{% static "takdhum/assets/js/init.js" %}"></script>
+
+{% endblock script %}

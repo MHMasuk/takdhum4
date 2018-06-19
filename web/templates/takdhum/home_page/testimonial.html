@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<!--
+|========================
+|  testimonial
+|========================
+-->
+<section class="section uv-testimonial image-bg" id="uv-testimonial" style="background-image: url({% static "takdhum/assets/images/ts-bg.jpg" %});">
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 client-quates">
+                    <div class="uv-client-testimonial">
+                        <div class="slider-content wow">
+                            <div class="carousel uv-carousel-fade slide" data-ride="carousel" id="quote-carousel">
+                                <div class="carousel-inner text-center">
+                                    <!-- Quote -->
+                                    <div class="item active">
+                                        <blockquote>
+                                            <div class="row">
+                                                <div class="uv-client-quates">
+                                                    <h3>{{ t.person_name }}</h3>
+                                                    <p>{{ t.person_comment }}</p>
+                                                </div>
+                                            </div>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <!-- Bottom Carousel Indicators -->
+                                <ol class="carousel-indicators uv-indicator">
+                                    <li data-target="#quote-carousel" data-slide-to="0" class="active"><img class="img-responsive " src="{{ t.person_image.url }}" alt=""></li>
+
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

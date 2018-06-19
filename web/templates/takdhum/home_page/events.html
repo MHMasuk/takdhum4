@@ -1,0 +1,53 @@
+{% load staticfiles %}
+
+
+<!--
+|========================
+|      Events
+|========================
+-->
+<section class="uv-event">
+    <div class="container">
+        <div class="row section-separator">
+            <div class="section-title col-xs-12 wow fadeIn" data-wow-delay="0.2s">
+                <h2>Events</h2>
+                <span>Recent Takdhum Events to feed your brain</span>
+                <hr class="uv-hr">
+                <a href="{% url 'event_list' %}" class="btn btn-base view-full-event"> View All</a>
+            </div>
+            <div class="uv-each-events col-xs-12">
+                <ul>
+
+                    {% for event in events %}
+                    <!-- Event list-->
+                    <li class="wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="col-sm-3">
+                            <div class="uv-event-date">
+                                <h3> {{ event.date }} </h3>
+                                <span>{{ event.month }}</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="uv-event-content">
+
+                                <a href="{% url 'single_event_page' event_id=event.id %}"><h4>{{ event.title }}</h4>
+
+                                <div class="schedule">
+                                    <span class="uv-event-time"><i class="fa fa-clock-o main-color"></i> {{ event.start_and_end_time }}</span>
+                                    <span class="uv-event-place"><i class="fa fa-map-marker main-color"></i> {{ event.location }}</span>
+                                </div>
+                                <p>{{ event.description|truncatewords:25 }}</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <img src="{{ event.image.url }}" alt="{{ event.title }}" class="img-responsive">
+                        </div>
+                    </li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+

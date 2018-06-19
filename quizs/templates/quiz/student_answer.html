@@ -1,0 +1,37 @@
+{% extends 'takdhum/html/base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block title %} {{ title }} {% endblock title %}
+{% block body %}
+    <div class="container">
+    </div>
+    <div class="uv-student-courses-overview">
+        <h3>Taken Quiz</h3>
+        <ul>
+            {% for answer in studentanswer_list %}
+                <li>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="uv-std-course-info">
+
+                                <h4>{{ answer.student }}</h4>
+                                <h6> Course name: {{ answer.course }}</h6>
+                                <p><span class="text-danger">Question :</span> {{ answer.question }}</p>
+                                {% if answer.answer_file %}
+                                    <img src="{{ answer.answer_file.url }}" alt="" class="img-responsive">
+                                {% endif %}
+                                {% if answer.answer_text %}
+                                    <p><span class="text-success">Answer : </span>{{ answer.answer_text }}</p>
+                                {% endif %}
+                                <hr>
+                                <a  class="btn" href="{% url 'all-answer' %}">Send email</a>
+                                {% empty %}
+                                <h4>OOh! You don't take any Quiz yet.</h4>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

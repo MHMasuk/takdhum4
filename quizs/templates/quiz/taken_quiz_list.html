@@ -1,0 +1,54 @@
+{% extends 'takdhum/html/base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block title %} {{ title }} {% endblock title %}
+{% block body %}
+    <div class="container">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% for question in question_list %}
+            <hr class="border_bottom">
+            <h6>Question: {{ question.question }}</h6>
+
+            {% if question.question_file %}
+                <img src="{{ question.question_file.url }}" alt="" class="img-responsive">
+            {% endif %}
+            <hr>
+            {% if question.option1 %}
+            <form action="{% url 'vote' question_id=question.id %}" method="post">
+                {% csrf_token %}
+                    <input type="radio" name="question" id="question{{ forloop.counter }}" value="{{ question.option1 }}"/>
+                    <label for="question{{ forloop.counter }}">{{ question.option1 }}</label><br/>
+                    <input type="radio" name="question" id="question{{ forloop.counter }}" value="{{ question.option2 }}"/>
+                    <label for="question{{ forloop.counter }}">{{ question.option2 }}</label><br/>
+                    <input type="radio" name="question" id="question{{ forloop.counter }}" value="{{ question.option3 }}"/>
+                    <label for="question{{ forloop.counter }}">{{ question.option3 }}</label><br/>
+                    <input type="radio" name="question" id="question{{ forloop.counter }}" value="{{ question.option4 }}"/>
+                    <label for="question{{ forloop.counter }}">{{ question.option4 }}</label><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+            {% endif %}
+
+            <h4 class="text-success">Submit your answer:</h4>
+            {% if question_list %}
+                <img src="{{ question.course.student_answers }}" alt="" class="img-responsive">
+            {% endif %}
+            <div class="container my-4">
+                <form action="{% url 'vote' question_id=question.id%}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="col-xs-12">
+                        <input type="submit" value="Submit" class="btn btn-fill">
+                    </div>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+    <hr>
+
+{% endblock %}

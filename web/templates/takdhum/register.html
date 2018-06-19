@@ -1,0 +1,141 @@
+{% include 'takdhum/html/head.html' %}
+{% load staticfiles %}
+<title>Login | Takdhum</title>
+{% include 'takdhum/html/header.html' %}
+<div class="uv-login-reg-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-xs-12 uv-login-reg-from-inner">
+                <div class="login-logo">
+                    <a href="{% url 'index' %}">
+                        <img src="{{ info.logo.url }}" alt="{{ info.slogan }}" class="img-responsive">
+                    </a>
+                </div>
+                <div class="uv-login-reg shadow-1">
+                  <!-- Nav tabs -->
+                    <div class="login-reg-nav">
+                         <ul class="nav nav-tabs" role="tablist" id="myTabs">
+                            <li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Login</a></li>
+                            <li role="presentation" class="active">
+                                <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"> <a href="{% url 'sign-up' %}"> Register</a></a>
+                                <!--<a href="{% url 'sign-up' %}"> Register</a>-->
+                            </li>
+                        </ul>
+                        <hr>
+                    </div>
+
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+
+                    <div role="tabpanel" class="tab-pane active" id="profile">
+                          <form action="{% url 'sign-up' %}" method="post">
+                            {% csrf_token %}
+                              {% for field in form %}
+                              <p>
+                                <div class="form-group">
+                                    {# {{ field.label_tag }} #}
+
+                                    {{field}}
+                                </div>
+                                {% if field.help_text %}
+                                  <small style="display: none">{{ field.help_text }}</small>
+                                {% endif %}
+                                {% for error in field.errors %}
+                                  <p style="color: red">{{ error }}</p>
+                                {% endfor %}
+                              </p>
+                              {% endfor %}
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <button type="submit" class="form-control btn btn-fill ">Register an Account</button>
+                                    </div>
+                                </div>
+                            </div>
+                             <p>
+                                 Please Give Proper email address for verification.
+                                 No video will be allowed to view without registration.
+                            </p>
+                          </form>
+
+                        <!--<form id="register-form" class="uv-reg-form" action="{% url 'sign-up' %}" method="POST">-->
+                        <!--    {% csrf_token %}-->
+                        <!--    {{ form.as_p }}-->
+                            <!--
+                        <!--    <div class="form-group">-->
+                        <!--        <input type="text" name="regusername" id="reg-username" tabindex="1" class="form-control" placeholder="Username" value="">-->
+                        <!--    </div>-->
+                        <!--    <div class="form-group">-->
+                        <!--        <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">-->
+                        <!--    </div>-->
+                        <!--    <div class="form-group">-->
+                        <!--        <input type="password" name="regpassword" id="reg-password" tabindex="2" class="form-control" placeholder="Password">-->
+                        <!--    </div>-->
+                        <!--    <div class="form-group">-->
+                        <!--        <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">-->
+                        <!--    </div>-->
+                        <!--    -->
+                        <!--    <div class="form-group">-->
+                        <!--        <div class="row">-->
+                        <!--            <div class="col-sm-12">-->
+                        <!--                <button type="submit" class="form-control btn btn-fill ">Register an Account</button>-->
+                        <!--            </div>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</form>-->
+                    </div>
+
+                      <div role="tabpanel" class="tab-pane" id="home">
+                        <form id="login-form" class="uv-login-form" action="{% url 'login' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="UserID" value="">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" id="login-password" tabindex="2" class="form-control" placeholder="Password">
+                            </div>
+                            <div class="form-group text-center">
+                                <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                                <label for="remember"> Remember Me</label>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <button type="submit" class="form-control btn btn-fill">Login Account</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="text-center">
+                                            <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'takdhum/html/script.html' %}
+
+
+{% block script %}
+<!-- init -->
+<script src="{% static "takdhum/assets/js/init.js" %}"></script>
+
+{% endblock script %}

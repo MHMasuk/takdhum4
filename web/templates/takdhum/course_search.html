@@ -1,0 +1,43 @@
+
+<!--Search start-->
+        <div class="uv-course-nav">
+
+            <form action="{% url 'search' %}" method="get" class="uv-nav-form">
+                <input type="text" placeholder=" Search.." name="course_title" style="width: 93%;font-size:24px;padding:5px;box-sizing:border-box;border-radius: 5px;" id="id_course_title">
+                <button type="submit" style="font-size:24px;"><i class="fa fa-search"></i></button>
+
+                <!--<ul class="row">-->
+                <!--    <li class="col-md-3">-->
+                <!--        <select class="select-beast">-->
+                <!--            <option value="0" selected="selected">All Categories</option>-->
+                <!--            {% for cat in categories %}-->
+                <!--            <option class="level-0" value="23">{{ cat.category_name }}</option>-->
+                <!--            {% endfor %}-->
+
+                <!--        </select>-->
+                <!--    </li>-->
+                <!--    <li class="col-md-3">-->
+                <!--        <select class="select-beast">-->
+                <!--            <option value="0" selected="selected">All Levels</option>-->
+                <!--            {% for l in level %}-->
+                <!--            <option>{{ l.name }}</option>-->
+                <!--            {% endfor %}-->
+
+                <!--        </select>-->
+                <!--    </li>-->
+                <!--    <li class="col-md-3">-->
+                <!--        <select class="select-beast">-->
+                <!--            <option value="0" selected="selected">All Course Tags</option>-->
+                <!--            {% for c in courses %}-->
+                <!--            <option class="level-0" value="11">{{ c.course_title }}</option>-->
+                <!--            {% endfor %}-->
+
+                <!--        </select>-->
+                <!--    </li>-->
+                <!--    <li class="col-md-3">-->
+                <!--        <input type="submit" class="btn btn-fill" value="Submit">-->
+                <!--    </li>-->
+                <!--</ul>-->
+            </form>
+        </div>
+        <!--search end-->

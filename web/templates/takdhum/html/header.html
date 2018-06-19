@@ -1,0 +1,223 @@
+{% load staticfiles %}
+<!--
+|========================
+|  HEADER
+|========================
+-->
+<header class="xt-header">
+    <div class="xt-header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 uv-header-contact">
+                    {% if info.phone_1 %}
+                        <a href="#"> <i class="fa fa-phone"></i>{{ info.phone_1 }}</a>
+                    {% else %}
+                        <a href="#"> <i class="fa fa-phone"></i>+8801714016515</a>
+                    {% endif %}
+                    {% if info.email %}
+                        <a href="#"> <i class="fa fa-envelope-o"></i>{{ info.email }}</a>
+                    {% else %}
+                        <a href="#"> <i class="fa fa-envelope-o"></i>info@takdhum.com</a>
+                    {% endif %}
+                </div>
+                <div class="col-sm-6 uv-header-user">
+                    {% if not request.user.is_authenticated %}
+                        <a href="{% url 'get_login' %}"><i class="fa fa-lock"></i>login/register</a>
+                    {% else %}
+                        <a href="{% url 'my_course' user=request.user %}"><i class="fa fa-book"></i>Resume course</a>
+                    {% endif %}
+                    <div class="xt-header-search">
+                        <div id="besocial-header-right" class="">
+                            <i class="fa fa-remove"></i>
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <div id="besocial-search-bar" class="">
+                            <form class="besocial-topbar-searchbox" action="{% url 'search' %}" method="get">
+                                <input type="text" class="besocial-topbar-searchtext" placeholder="Search..."
+                                       name="course_title" id="id_course_title">
+                                <input type="submit" class="fa-input" name="submit" value="Go">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="xt-main-nav">
+        <nav class="navbar nav-scroll home-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="uv-logo">
+                            {% if info.logo.url %}
+                                <a href="{% url 'index' %}">
+                                    <img src="{{ info.logo.url }}" alt="" class="img-responsive">
+                                </a>
+                            {% else %}
+                                <a href="{% url 'index' %}">
+                                    <img src="{% static 'takdhum/assets/images/univ-logo.png' %}" alt=""
+                                         class="img-responsive">
+                                </a>
+                            {% endif %}
+
+
+                        </div>
+                    </div>
+                    <div class="col-sm-8 pull-right">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                    data-action="#js-navbar-menu" aria-expanded="false">
+                                <span aria-hidden="true" class="icon"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="js-navbar-menu">
+                            <ul class="nav navbar-nav ep-mobile-menu" id="navbar-nav">
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li class="dropdown xt-drop-nav">
+                                    {% if categories %}
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                                           data-animations="fadeInDown fadeInDown fadeInDown">
+                                            Courses
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            {% for c in categories %}
+                                                <li>
+                                                    <a href="{% url 'single_category' category=c.category_url %}">{{ c.category_name }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% else %}
+                                        <li><a href="{% url 'all_course' %}">Courses</a></li>
+                                    {% endif %}
+
+                                </li>
+
+
+                                <!--
+                                <li class="dropdown xt-drop-nav">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-animations="fadeInDown fadeInDown fadeInDown">
+                                        Blog
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="blog.html">Blog Page</a></li>
+                                        <li><a href="blog-single.html">Blog Single</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown xt-drop-nav">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-animations="fadeInDown fadeInDown fadeInDown">
+                                        Features
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="services.html">FAQ</a></li>
+                                        <li><a href="not-found.html">404</a></li>
+                                    </ul>
+                                </li>
+                                -->
+                                <!--<li><a href="#">FAQ</a></li>-->
+                                <!--<li><a href="{% url 'faq_page' %}">FAQ</a></li>-->
+                                <li><a href="{% url 'about_page' %}">About Us</a></li>
+                                <li><a href="{% url 'contact_page' %}">Contact</a></li>
+
+                                {% if request.user.is_authenticated %}
+                                    <li><a href="#"></a></li>
+
+                                    <li class="dropdown xt-drop-nav">
+
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                                           data-animations="fadeInDown fadeInDown fadeInDown">
+                                            {{ request.user }}
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="{% url 'user_profile' username=user.username %}">Profile</a></li>
+                                            <li><a href="{% url 'update_profile' %}">Profile Settings</a></li>
+{#                                            <!--<li><a href="{% url 'user_profile' slug=request.user %}">Profile</a></li>-->#}
+{#                                            <!--<li><a href="#">Classes</a></li>-->#}
+                                            <li><a href="{% url 'my_course' user=request.user %}">Courses</a></li>
+                                            <li><a href="{% url 'student-answer' username=request.user %}"><i class="fa fa-calendar"></i>My taken quiz</a></li>
+                                            <!--<li><a href="#">Favorite Course</a></li>
+                                            <li><a href="#">Privacy Setting</a></li>
+                                            <li><a href="#">Profile Setting</a></li>-->
+                                            <li><a href="{% url 'password_change' %}">Change Password</a></li>
+                                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                                        </ul>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav><!-- /.navbar -->
+    </div>
+
+
+    <!-- Mobile Menu-->
+    <div class="menu-spacing visible-xs nav-scroll">
+        <div class="mobile-menu-area visible-xs visible-sm">
+            <div class="mobile-menu">
+                <nav id="mobile-menu-active">
+                    <ul class="main">
+                        <li class="active"><a class="main-a" href="{% url 'index' %}">Home</a>
+
+                        </li>
+                        <li><a class="main-a" href="#">Courses</a>
+                            <ul>
+                                {% for c in categories %}
+                                    <li>
+                                        <a href="{% url 'single_category' category=c.category_url %}">{{ c.category_name }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <!--
+                        <li><a class="main-a" href="#">Features</a>
+                            <ul>
+                                <li><a href="not-found.html">404</a></li>
+                                <li><a href="login-reg.html">Login & Registration</a></li>
+                                <li><a href="teacher-details.html">Team Details</a></li>
+                                <li><a href="classes.html">Classes</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="services.html">Service</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li><a class="main-a" href="#">Blog</a>
+                            <ul>
+                                <li><a href="blog.html">Blog Page</a></li>
+                                <li><a href="blog-single.html">Blog Single</a></li>
+                            </ul>
+                        </li>
+                        -->
+                        <!--<li><a class="main-a" href="#">FAQ</a></li>-->
+                        <!--<li><a class="main-a" href="{% url 'faq_page' %}">FAQ</a></li>-->
+                        <li><a class="main-a" href="{% url 'about_page' %}">About Us</a></li>
+                        <li><a class="main-a" href="{% url 'contact_page' %}">Contact</a></li>
+
+                        {% if request.user.is_authenticated %}
+                            <li><a class="main-a" href="#">{{ request.user }}</a>
+                                <ul>
+                                    <li><a href="{% url 'user_profile' username=user.username %}">Profile</a></li>
+                                    <li><a href="{% url 'update_profile' %}">Profile Settings</a></li>
+                                    <!--<li><a href="#">Classes</a></li>-->
+                                    <li><a href="{% url 'my_course' user=request.user %}">Courses</a></li>
+                                    <li><a href="{% url 'student-answer' username=request.user %}"><i class="fa fa-calendar"></i>My taken quiz</a></li>
+                                    <!--<li><a href="#">Favorite Course</a></li>
+                                    <li><a href="#">Privacy Setting</a></li>
+                                    <li><a href="#">Profile Setting</a></li>-->
+                                    <li><a href="{% url 'password_change' %}">Change Password</a></li>
+                                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                                </ul>
+                            </li>
+                        {% else %}
+                            <li><a class="main-a" href="{% url 'get_login' %}">Login</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

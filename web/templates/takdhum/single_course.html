@@ -1,0 +1,213 @@
+{% extends 'takdhum/html/base.html' %}
+{% load staticfiles %}
+
+{% block title %} {{ title }} {% endblock title %}
+{% block meta %}
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="description" content="{{ course_name.course_title }}, Takdhum online art school in Bangladesh."/>
+    <meta name="keywords" content="Takdhum Course, {{ course_name.course_title }}"/>
+    <meta name="developer" content="Md. Mohaymenul Islam">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+{% endblock meta %}
+
+{% block body %}
+    <section class="row">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">LOGIN TO CONTINUE</h4>
+                    </div>
+                    <div class="modal-body">
+                        You should login to access all takdhum videos.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <a href="{% url 'get_login' %}">
+                            <button type="button" class="btn btn-primary">Login</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- Video Player -->
+        {% if request.user.is_authenticated %}
+            <div class="progress mb-3">
+                <div class="progress-bar" role="progressbar" aria-valuenow="{{ progress }}" aria-valuemin="0"
+                     aria-valuemax="100" style="width: {{ progress }}%"></div>
+            </div>
+        {% endif %}
+            <div class="col-sm-8" id='videoDisplay'>
+                {#                <h1 class="text-center">Select a video</h1>#}
+                {% block vedio %}
+
+                {% endblock %}
+                <!--<iframe width="780" height="428" src="//www.youtube.com/embed/oR-6N1Dc_zc" frameborder="0" allowfullscreen></iframe>-->
+
+            </div>
+
+            <!-- Video List -->
+            <div class="panel-group col-sm-4" id="accordion" role="tablist" aria-multiselectable="true">
+                <!-- Video list 1 -->
+                <div class="panel panel-default">
+                    <!-- Course title -->
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                               aria-expanded="true" aria-controls="collapseOne">
+                                {{ course_name.course_title }}
+                            </a>
+                        </h4>
+                    </div>
+                    <!-- Course Video -->
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                         aria-labelledby="headingOne">
+                        <div class="list-group">
+                            <form method="post" action="{% url 'vedio_link' %}">
+                                {% if course_videos %}
+                                    {% for video in course_videos %}
+                                        {# {% if forloop.first or request.user.is_authenticated %} #}
+                                        {% if request.user.is_authenticated or video.is_public %}
+                                            <a href="{% url 'single_vedio' category=video.course_name.course_category course=video.course_name.course_url video=video.video_title %}"
+                                               class="list-video list-group-item" name="vedio_name"
+                                               data-link="{{ video.video_link }}?modestbranding=1&autoplay=1&loop=1&rel=0&showinfo=1">
+                                                <i class="fa fa-youtube-play"></i> {{ video.video_title }}</a>
+                                        {% else %}
+                                            <a href="#" class="list-video list-group-item" data-toggle="modal"
+                                               data-target="#myModal" role="button">
+                                                <i class="fa fa-youtube-play"> {{ video.video_title }} </i> </a>
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% if request.user.is_authenticated %}
+                                        <a href="{% url 'question-list' course=course_name.course_url %}"
+                                           class="btn btn-fill">Take
+                                            Quiz</a>
+                                    {% endif %}
+                                {% else %}
+                                    <p>There is no course vedio.</p>
+                                {% endif %}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                {# {% for course in all_Courses %} #}
+                <!--<div class="panel panel-default">-->
+                <!--<div class="panel-heading" role="tab" id="{{ course.course_url }}">-->
+                <!--<h4 class="panel-title">-->
+                <!--<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ course.course_url }}" aria-expanded="false"-->
+                <!--aria-controls="collapse{{ course.course_url }}">-->
+                <!--{{ course.course_title }}-->
+                <!--</a>-->
+                <!--</h4>-->
+                <!--</div>-->
+                <!--<div id="collapse{{ course.course_url }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ course.course_url }}">-->
+
+                <!--<div class="list-group">-->
+                <!--<a href="#" class="list-video list-group-item" data-link="https://www.youtube.com/embed/LY_rMXXuJp8">-->
+                <!--<i class="fa fa-youtube-play"></i> Rangabati</a>-->
+                <!--<a href="#" class="list-video list-group-item" data-link="https://www.youtube.com/embed/44E6xD8YJL0">-->
+                <!--<i class="fa fa-youtube-play"></i> JODI THAKEY NOSIBE</a>-->
+                <!--<a href="#" class="list-video list-group-item" data-toggle="modal" data-target="#myModal" role="button">Video 1</a>-->
+                <!--<a href="#" class="list-video list-group-item" data-toggle="modal" data-target="#myModal">Video 1</a>-->
+                <!--<a href="#" class="list-video list-group-item" data-toggle="modal" data-target="#myModal">Video 1</a>-->
+                <!--<a href="#" class="list-video list-group-item" data-toggle="modal" data-target="#myModal">Video 1</a>-->
+                <!--<a href="#" class="list-video list-group-item" data-toggle="modal" data-target="#myModal">Video 1</a>-->
+                <!--</div>-->
+
+                <!--</div>-->
+                <!--</div>-->
+                {# {% endfor %} #}
+
+
+                <!--<div class="panel panel-default">-->
+                <!--<div class="panel-heading" role="tab" id="headingThree">-->
+                <!--<h4 class="panel-title">-->
+                <!--<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false"-->
+                <!--aria-controls="collapseThree">-->
+                <!--Collapsible Group Item #3-->
+                <!--</a>-->
+                <!--</h4>-->
+                <!--</div>-->
+                <!--<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">-->
+
+                <!--<div class="list-group">-->
+                <!--<a href="#" class="list-video list-group-item" data-link="https://www.youtube.com/embed/LY_rMXXuJp8">-->
+                <!--<i class="fa fa-youtube-play"></i> Rangabati</a>-->
+                <!--<a href="#" class="list-video list-group-item" data-link="https://www.youtube.com/embed/44E6xD8YJL0">-->
+                <!--<i class="fa fa-youtube-play"></i> JODI THAKEY NOSIBE</a>-->
+                <!--<a href="#" class="list-video list-group-item">Video 1</a>-->
+                <!--<a href="#" class="list-video list-group-item">Video 1</a>-->
+                <!--<a href="#" class="list-video list-group-item">Video 1</a>-->
+                <!--<a href="#" class="list-video list-group-item">Video 1</a>-->
+                <!--<a href="#" class="list-video list-group-item">Video 1</a>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+
+
+            </div>
+
+        </div>
+    </section>
+
+
+{% endblock body %}
+
+
+
+{% block script %}
+
+    <!-- init -->
+    <script>
+        $(window).on('scroll', function () {
+            var scroll = $(window).scrollTop()
+            if (scroll >= 55) {
+                $('.nav-scroll').addClass('strict')
+            } else {
+                $('.nav-scroll').removeClass('strict')
+            }
+        })
+
+        var trigger = $('.navbar-toggle'),
+            overlay = $('.overlay'),
+            active = false;
+
+        $('.navbar-toggle, #navbar-nav li a, .overlay').on('click', function () {
+            $('.navbar-toggle').toggleClass('active')
+            $('#js-navbar-menu').toggleClass('active');
+            overlay.toggleClass('active');
+        });
+
+        $('#mobile-menu-active').meanmenu();
+        var win = $(window);
+        var headerArea = $('.menu-spacing ');
+        var header3 = $('.menu-spacing ');
+        var stick = 'stick';
+        var stick2 = 'stick2';
+
+        win.on('scroll', function () {
+            var scroll = win.scrollTop();
+            if (scroll < 245) {
+                headerArea.removeClass(stick);
+            } else {
+                headerArea.addClass(stick);
+            }
+        });
+        win.on('scroll', function () {
+            var scroll = win.scrollTop();
+            if (scroll < 100) {
+                header3.removeClass(stick2);
+            } else {
+                header3.addClass(stick2);
+            }
+        });
+
+    </script>
+    <script src="{% static "takdhum/assets/js/coursed.js" %}"></script>
+
+{% endblock script %}

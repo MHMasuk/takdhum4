@@ -1,0 +1,66 @@
+{% extends 'takdhum/profile/base_profile.html' %}
+{% load crispy_forms_tags %}
+{% block profile_info %}
+    <div class="uv-student-profile-details-header">
+                        <div class="col-md-4 col-sm-12">
+                            <div class="uv-student-img">
+                                {% if user.profile.profile_picture %}
+                                <img src="{{ user.profile.profile_picture.url }}" alt="" class="img-responsive">
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="uv-student-profile-inner">
+                                <ul>
+                                    <li>
+                                        <span>Name:</span>
+                                        <p>{{ user.get_full_name }}</p>
+                                    </li>
+                                    <li>
+                                        <span>Student ID:</span>
+                                        <p>1000{{ user.id }}</p>
+                                    </li>
+                                    <li>
+                                        <span>Father Name:</span>
+                                        <p>{{ user.profile.father_name }}</p>
+                                    </li>
+                                    <li>
+                                        <span>Mother Name:</span>
+                                        <p>{{ user.profile.mother_name }}</p>
+                                    </li>
+
+                                    <li>
+                                        <span>Phone No:</span>
+                                        <p>{{ user.profile.phone_number }}</p>
+                                    </li>
+                                    <li>
+                                        <span>Email Address:</span>
+                                        <p>{{ user.email}}</p>
+                                    </li>
+                                    <li>
+                                        <span>Institute:</span>
+                                        <p>{{ user.profile.institute }}</p>
+                                    </li>
+                                    <li>
+                                        <span>Address:</span>
+                                        <p>{{ user.profile.address }}</p>
+                                    </li>
+                                    <li>
+                                        <span>Facebook ID:</span>
+                                        <p>{{ user.profile.facebook }}</p>
+                                    </li>
+                                    <li>
+                                        <span>Twitter ID:</span>
+                                        <p>{{ user.profile.twitter }}</p>
+                                    </li>
+                                    <li>
+                                        <span>LinkedIn ID:</span>
+                                        <p>{{ user.profile.linkedin }}</p>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+{% endblock %}

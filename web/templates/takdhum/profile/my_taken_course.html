@@ -1,0 +1,44 @@
+{% extends 'takdhum/profile/base_profile.html' %}
+
+{% block profile_info %}
+
+    <div class="uv-student-courses-overview">
+        <h3>Taken Quiz : Course name</h3>
+        <ul>
+            {% for answer in studentanswer_list %}
+                <li>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="uv-std-course-info">
+                                <form class="form" action="{% url 'quize-details' %}" method="post" >{% csrf_token %}
+                                    <button class="btn btn-outline-success" type="submit" name="q" value="{{ answer }}">{{ answer }}</button>
+                                </form>
+{#                                <p><span class="text-danger">Question :</span> {{ answer.question }}</p>#}
+{#                                <h6><span class="text-success">Answer : </span></h6>#}
+{#                                {% if answer.answer_file %}#}
+{#                                    <img src="{{ answer.answer_file.url }}" alt="" class="img-responsive">#}
+{#                                    {% if answer.is_pass %}#}
+{#                                        <h6><span class="text-success">Comment : </span></h6>#}
+{#                                        <p>Congrates,You got Pass</p>#}
+{#                                    {% endif %}#}
+{#                                {% endif %}#}
+{#                                {% if answer.answer_text %}#}
+{#                                    <p>{{ answer.answer_text }}</p>#}
+{#                                    {% if answer.is_pass %}#}
+{#                                        <h6><span class="text-success">Comment : </span></h6>#}
+{#                                        <p>Congrates,You got Pass</p>#}
+{#                                    {% endif %}#}
+{#                                {% endif %}#}
+{#                                <hr>#}
+                                {#                                   <br/><span><small>Last visited: {{ course_list.last_visited|timesince }} ago</small></span>#}
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {% empty %}
+                <h4>OOh! You don't take any Quiz yet.</h4>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}

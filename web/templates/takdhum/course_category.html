@@ -1,0 +1,101 @@
+{% extends 'takdhum/html/base.html' %}
+{% load staticfiles %}
+
+{% block title %} {{ title }} {% endblock title %}
+
+{% block body %}
+
+<section class="uv-subpage-heading image-bg" style="background-image: url({% static "takdhum/assets/images/takdhum-web-banner-01-01.png" %});">
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="uv-subhead-content col-xs-12">
+                    {% if heading %}
+                    <h2>{{ heading|capfirst }} Courses</h2>
+                    <span>Takdhum all {{ heading }} courses</span>
+                    {% else %}
+                    <h2>{{ tag|capfirst }} Courses</h2>
+                    <span>Takdhum all {{ tag }} courses</span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="uv-pagination">
+    <div class="container">
+        <ul>
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">{{ tag }}</a></li>
+        </ul>
+    </div>
+</div>
+
+<section class="uv-course-archive">
+    <div class="container">
+            <div class="col-md-9 col-sm-8">
+                <!--Search course-->
+                     {% include 'takdhum/course_search.html' %}
+
+                <!--End search course-->
+
+                <div class="row">
+                    <div class="uv-courses-2">
+                        <div class="">
+                            {% if courses %}
+                            {% for c in courses %}
+                            <div class="col-md-4 col-sm-6">
+                                <div class="uv-courese-single-thumb uv-shadow">
+                                    <a href="{% url 'single_course' category=c.course_category.category_url course=c.course_url %}">
+                                        <div class="uv-post-img">
+                                            <img src="{{ c.thumbnail_image.url }}" alt="" class="img-responsive">
+                                            <div class="uv-post-author">
+                                            </div>
+                                        </div>
+                                        <div class="uv-course-thumb-inner">
+                                            <h4>{{ c.course_title|truncatewords:6 }}</h4>
+                                            <!--<p><span>$230.00</span> <del>$280</del></p> -->
+                                        </div>
+                                    </a>
+                                    <!--<ul class="course-info-2">-->
+                                        <!--<li class="course-info-2">-->
+                                            <!--<i class="fa fa-users"></i>-->
+                                            <!--<span>500 Students</span>-->
+                                        <!--</li>-->
+                                        <!--<li class="uv-course-rating">-->
+                                            <!--<i class="fa fa-star"></i>-->
+                                            <!--<i class="fa fa-star"></i>-->
+                                            <!--<i class="fa fa-star"></i>-->
+                                            <!--<i class="fa fa-star"></i>-->
+                                            <!--<i class="fa fa-star"></i>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                </div>
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                                <p>There is no course added yet.</p>
+                        {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% include 'takdhum/body_course_category.html' %}
+
+
+    </div>
+</section>
+
+
+
+{% endblock body %}
+
+
+{% block script %}
+<!-- init -->
+<script src="{% static "takdhum/assets/js/init.js" %}"></script>
+
+{% endblock script %}

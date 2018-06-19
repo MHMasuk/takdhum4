@@ -1,0 +1,133 @@
+{% extends 'takdhum/html/base.html' %}
+{% load staticfiles %}
+{% block meta %}
+<!-- Meta -->
+<meta charset="utf-8">
+<meta name="description" content="TAKDHUM is a video-based online classroom where students develop creativity and confidence through our multi-level art instruction program. We offer video lessons that can be taken anytime, anywhere- via laptop, tablet or smart phone. Each program meets the Standards for Arts Education.
+" />
+<meta name="keywords" content="TAKDHUM is a video-based online classroom in Bangladesh" />
+<meta name="developer" content="Md. Mohaymenul Islam">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+{% endblock meta %}
+
+{% block title %} Home {% endblock title %}
+
+
+
+{% block body %}
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+
+        <!--
+        |========================
+        |   SLIDER CONTENT
+        |========================
+        -->
+        {% include 'takdhum/home_page/slider.html' %}
+
+
+        <!--
+        |========================
+        |      Service
+        |========================
+        -->
+        {# {% include 'takdhum/home_page/service.html' %} #}
+
+        <!--
+        |========================
+        | About
+        |========================
+        -->
+        {# {% include 'takdhum/home_page/about.html' %} #}
+
+        <!--
+        |========================
+        |  Join
+        |========================
+        -->
+
+            <section class="uv-join bg-2">
+                <div class="container">
+                    <div class="section-separator">
+                        <div class="uv-join-inner image-bg" style="background-image: url({% static "takdhum/assets/images/join-bg.jpg" %});">
+                            <div class="join-content wow fadeIn" data-wow-delay="0.2s">
+                                <span>Click to Apply Now for Details</span>
+                                {% if not request.user.is_authenticated %}
+                                <h3>Free Registration is Going on</h3>
+                                <div class="join-btn">
+                                    <a href="{% url 'sign-up' %}" class="btn btn-base">Apply Now</a>
+                                </div>
+                                {% else %}
+                                <h3>Thank you for stay with us </h3>
+                                <div class="join-btn">
+                                    <a href="{% url 'all_course' %}" class="btn btn-base">View Courses</a>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        <!--
+        |========================
+        |      Course
+        |========================
+        -->
+        {% include 'takdhum/home_page/index_page_course.html' %}
+
+        <!--
+        |========================
+        |      Events
+        |========================
+        -->
+        {% include 'takdhum/home_page/events.html' %}
+
+        <!--
+        |========================
+        |  video
+        |========================
+        -->
+        <section class="uv-video image-bg" style="background-image: url({% static "takdhum/assets/images/website-banner-design.png" %});">
+            <div class="overlay">
+                <div class="container">
+                    <div class="row section-separator wow fadeIn" data-wow-delay="0.2s">
+                        <h2>Takdhum Campus Tour</h2>
+                        <div class="button">
+                            <a data-fancybox href="{{ info.promo_video }}"><i class="fa flaticon-play-button"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+        |========================
+        |  blog 1
+        |========================
+        -->
+        {# {% include 'takdhum/home_page/home_blog.html' %} #}
+
+        <!--
+        |========================
+        |  testimonial
+        |========================
+        -->
+        {# {% include 'takdhum/home_page/testimonial.html' %} #}
+
+{% endblock body %}
+
+
+
+{% block script %}
+<!-- init -->
+<script src="{% static "takdhum/assets/js/init.js" %}"></script>
+
+{% endblock script %}

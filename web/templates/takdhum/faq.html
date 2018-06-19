@@ -1,0 +1,44 @@
+{% extends 'takdhum/html/base.html' %}
+{% load staticfiles %}
+
+{% block title %} FAQ {% endblock title %}
+
+{% block body %}
+
+
+<section class="uv-topics">
+    <div class="container">
+        <div class="row section-separator">
+            <div class="col-xs-12 section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="col-xs-12">
+                <div id="integration-list" class="uv-accordinaton">
+                    <ul>
+                        {% for f in faq %}
+                        <li>
+                            <a class="uv-accordinaton-list">
+                                <div class="uv-right-arrow">+</div>
+                                <h2>{{ f.question }}</h2>
+                            </a>
+                            <div class="uv-accordition-detail">
+                                <p>{{ f.answer }}</p>
+                            </div>
+                        </li>
+                        {% endfor %}
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock body %}
+
+
+{% block script %}
+<!-- init -->
+<script src="{% static "takdhum/assets/js/init.js" %}"></script>
+
+{% endblock script %}

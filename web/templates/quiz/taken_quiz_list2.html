@@ -1,0 +1,104 @@
+{% extends 'takdhum/html/base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block title %} {{ title }} {% endblock title %}
+{% block body %}
+    <div class="uv-single-contest uv-course-details">
+        <div class="container">
+            <hr>
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <div class="educationpress-main-content-inner row">
+                {% for question in question_list %}
+                    <div id="primary" class="content-area uv-course-listing-inner col-md-8 col-sm-12">
+                        <div class="course-description">
+                            <h3 class="course-title">Quiz - Question {{ question.pk }}</h3>
+                            <div class="quiz-wrapper">
+                                <h4>{{ question.question }}</h4>
+                                {% if question.question_file %}
+                                    <img src="{{ question.question_file.url }}" alt="" class="img-responsive">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="panel panel-primary">
+                                                <div class="panel-body">
+                                                    <form action="{% url 'vote' question_id=question.id %}"
+                                                          method="post"
+                                                          enctype="multipart/form-data">
+                                                        {% csrf_token %}
+                                                        {{ form.as_p }}
+                                                        <div class="panel-footer">
+                                                            <input type="submit" value="Submit" class="btn btn-fill">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="panel panel-primary">
+                                                <form action="{% url 'vote' question_id=question.id %}" method="post">
+                                                    {% csrf_token %}
+                                                <div class="panel-body">
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input name="question"
+                                                                   id="question{{ forloop.counter }}"
+                                                                   value="{{ question.option1 }}"
+                                                                   checked="" type="radio"> {{ question.option1 }}
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input name="question"
+                                                                   id="question{{ forloop.counter }}"
+                                                                   value="{{ question.option2 }}"
+                                                                   type="radio">{{ question.option2 }}
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input name="question"
+                                                                   id="question{{ forloop.counter }}"
+                                                                   value="{{ question.option3 }}"
+                                                                   type="radio">{{ question.option3 }}
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input name="question"
+                                                                   id="question{{ forloop.counter }}"
+                                                                   value="{{ question.option4 }}"
+                                                                   type="radio">{{ question.option4 }}
+                                                        </label>
+                                                    </div>
+                                                    <div class="panel-footer">
+                                                        <input type="submit" value="Submit" class="btn btn-fill">
+                                                    </div>
+
+                                                </div>
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div><!-- #primary -->
+                    {% empty %}
+                            <h6>There is no quiz in this course.</h6>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

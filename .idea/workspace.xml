@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bf6c7134-8a89-4e27-9dfe-2481bfbb983e" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/takdhum2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/takdhum2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/takdhum/assets/js/coursed.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/takdhum/assets/js/coursed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/takdhum/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/takdhum/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0002_aboutus_basic_info_faq.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0003_auto_20180319_1641.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0004_auto_20180319_1703.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0005_course_is_public.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0006_auto_20180320_1235.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0007_auto_20180320_1449.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0008_auto_20180331_1432.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0009_basic_info_promo_video.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0010_auto_20180407_2219.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0011_auto_20180409_2305.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0012_auto_20180422_2308.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0013_auto_20180424_2239.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0014_event_image2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0015_auto_20180426_1328.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0016_auto_20180426_2305.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0017_usermessage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0018_customuser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0019_auto_20180427_2136.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0020_profile.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0021_subcribe.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0022_auto_20180429_0033.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0023_auto_20180429_0039.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0024_auto_20180429_0125.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0025_auto_20180429_0142.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0026_auto_20180429_0146.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0027_profile_slug.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0028_auto_20180429_0631.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0029_auto_20180429_0937.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0030_singlevideo_views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0031_remove_singlevideo_views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0032_takencourse.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0033_auto_20180504_1646.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0034_auto_20180504_1659.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0035_auto_20180504_1705.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0036_auto_20180504_1722.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0037_auto_20180504_1746.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0038_auto_20180504_1750.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0039_takencourse_taken_course_category.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0040_remove_takencourse_taken_course_category.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0041_takencourse_taken_course_category.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0042_takencourse_taken_course_title.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0043_auto_20180504_1843.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0044_auto_20180504_2000.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0045_auto_20180504_2041.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0046_auto_20180504_2102.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0047_auto_20180504_2105.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0048_auto_20180504_2108.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0049_auto_20180504_2342.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0050_auto_20180505_1101.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0051_auto_20180517_0818.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0052_auto_20180517_0838.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0053_answer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0054_auto_20180517_1433.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0055_auto_20180517_1433.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0056_remove_answer_student.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0057_auto_20180517_1456.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0058_studentanswer_takenquiz.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0059_auto_20180518_1103.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0060_auto_20180518_1128.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0061_question_studentanswer_takenquiz.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0062_auto_20180518_1217.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0063_auto_20180518_1218.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0064_auto_20180518_1336.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0065_auto_20180518_1339.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0066_studentanswer_question.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0067_studentanswer_is_pass.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0068_auto_20180518_2018.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0069_auto_20180519_1034.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0070_studentanswer_answer_text.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0071_studentanswer_course_name.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0072_auto_20180519_1722.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0073_remove_studentanswer_course_name.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0074_studentanswer_counter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0075_remove_studentanswer_counter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0076_question_counter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0077_remove_question_counter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0078_studentanswer_counter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0079_auto_20180521_1055.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0080_auto_20180521_1057.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0081_auto_20180525_2028.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/migrations/0082_auto_20180525_2048.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/quiz/taken_quiz_list2.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/quiz/taken_quiz_list2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/takdhum/html/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/takdhum/html/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/takdhum/profile/my_course.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/takdhum/profile/my_course.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/takdhum/single_course.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/takdhum/single_course.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="191" column="26" lean-forward="true" selection-start-line="191" selection-start-column="26" selection-end-line="191" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#57#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="watch_vedio.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/templates/takdhum/profile/watch_vedio.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="my_course.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/templates/takdhum/profile/my_course.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-416">
+              <caret line="28" column="128" selection-start-line="28" selection-start-column="128" selection-end-line="28" selection-end-column="128" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="single_vedio.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/templates/takdhum/single_vedio.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="6" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="single_course.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/templates/takdhum/single_course.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="640">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
+              <folding>
+                <element signature="e#262#1294#0" />
+                <element signature="e#1412#1476#0" />
+                <element signature="e#1865#1994#0" />
+                <element signature="e#3813#4030#0" />
+                <element signature="e#4069#4738#0" />
+                <element signature="e#4773#5053#0" />
+                <element signature="e#5085#5289#0" />
+                <element signature="e#5323#6911#0" />
+                <element signature="e#6947#7272#0" />
+                <element signature="e#7312#7632#0" />
+                <element signature="e#7672#7970#0" />
+                <element signature="e#8007#8161#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1360">
+              <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>my_course</find>
+      <find>single_course</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/classroom/models.py" />
+        <option value="$PROJECT_DIR$/classroom/views/classroom.py" />
+        <option value="$PROJECT_DIR$/classroom/templates/classroom/home.html" />
+        <option value="$PROJECT_DIR$/classroom/views/teachers.py" />
+        <option value="$PROJECT_DIR$/classroom/urls.py" />
+        <option value="$PROJECT_DIR$/classroom/templates/classroom/students/_header.html" />
+        <option value="$PROJECT_DIR$/classroom/templates/classroom/teachers/quiz_change_list.html" />
+        <option value="$PROJECT_DIR$/classroom/templates/classroom/teachers/quiz_change_form.html" />
+        <option value="$PROJECT_DIR$/classroom/templates/classroom/teachers/quiz_add_form.html" />
+        <option value="$PROJECT_DIR$/classroom/templates/classroom/teachers/question_delete_confirm.html" />
+        <option value="$PROJECT_DIR$/classroom/templates/classroom/teachers/question_change_form.html" />
+        <option value="$PROJECT_DIR$/classroom/templates/classroom/teachers/question_add_form.html" />
+        <option value="$PROJECT_DIR$/classroom/templates/classroom/students/taken_quiz_list.html" />
+        <option value="$PROJECT_DIR$/classroom/templates/classroom/students/quiz_list.html" />
+        <option value="$PROJECT_DIR$/classroom/templates/classroom/students/interests_form.html" />
+        <option value="$PROJECT_DIR$/classroom/templates/classroom/teachers/quiz_results.html" />
+        <option value="$PROJECT_DIR$/classroom/templates/classroom/teachers/quiz_delete_confirm.html" />
+        <option value="$PROJECT_DIR$/classroom/templates/classroom/students/take_quiz_form.html" />
+        <option value="$PROJECT_DIR$/classroom/views/students.py" />
+        <option value="$PROJECT_DIR$/web/templates/quiz/taken_quiz_form.html" />
+        <option value="$PROJECT_DIR$/quiz/models.py" />
+        <option value="$PROJECT_DIR$/multichoice/models.py" />
+        <option value="$PROJECT_DIR$/quizs/forms.py" />
+        <option value="$PROJECT_DIR$/takdhum/urls.py" />
+        <option value="$PROJECT_DIR$/quizs/urls.py" />
+        <option value="$PROJECT_DIR$/web/forms.py" />
+        <option value="$PROJECT_DIR$/web/templates/quiz/taken_quiz_list.html" />
+        <option value="$PROJECT_DIR$/web/templates/quiz/taken_quiz_list2.html" />
+        <option value="$PROJECT_DIR$/web/templates/takdhum/profile/base_profile.html" />
+        <option value="$PROJECT_DIR$/web/templates/quiz/student_answer.html" />
+        <option value="$PROJECT_DIR$/web/templates/acc_active_email.html" />
+        <option value="$PROJECT_DIR$/web/templates/takdhum/profile/my_taken_course.html" />
+        <option value="$PROJECT_DIR$/web/templates/takdhum/profile/quize_details.html" />
+        <option value="$PROJECT_DIR$/static/takdhum/assets/js/coursed.js" />
+        <option value="$PROJECT_DIR$/takdhum/settings.py" />
+        <option value="$PROJECT_DIR$/web/admin.py" />
+        <option value="$PROJECT_DIR$/web/templates/takdhum/watch_vedio.html" />
+        <option value="$PROJECT_DIR$/web/urls.py" />
+        <option value="$PROJECT_DIR$/web/templates/takdhum/profile/watch_vedio.html" />
+        <option value="$PROJECT_DIR$/web/models.py" />
+        <option value="$PROJECT_DIR$/web/templates/takdhum/single_vedio.html" />
+        <option value="$PROJECT_DIR$/web/templates/takdhum/profile/my_course.html" />
+        <option value="$PROJECT_DIR$/web/templates/takdhum/single_course.html" />
+        <option value="$PROJECT_DIR$/web/views.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="67" />
+    <option name="y" value="27" />
+    <option name="width" value="1296" />
+    <option name="height" value="741" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="takdhumNew" type="b2602c69:ProjectViewProjectNode" />
+              <item name="takdhumNew" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="takdhumNew" type="b2602c69:ProjectViewProjectNode" />
+              <item name="takdhumNew" type="462c0819:PsiDirectoryNode" />
+              <item name="fixtures" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="takdhumNew" type="b2602c69:ProjectViewProjectNode" />
+              <item name="takdhumNew" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="takdhumNew" type="b2602c69:ProjectViewProjectNode" />
+              <item name="takdhumNew" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="takdhumNew" type="b2602c69:ProjectViewProjectNode" />
+              <item name="takdhumNew" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="takdhum" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="takdhumNew" type="b2602c69:ProjectViewProjectNode" />
+              <item name="takdhumNew" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="takdhum" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\Django Project\2018\June\takdhum (3)\takdhumNew\web\templates\takdhum\profile" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Django_Project\takdum_env\takdhum2\quizs\templates" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+    </configuration>
+    <configuration name="takdhum2" type="Python.DjangoServer" factoryName="Django server">
+      <module name="takdhum2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="takdhum.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="takdhum2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bf6c7134-8a89-4e27-9dfe-2481bfbb983e" name="Default" comment="" />
+      <created>1526449045346</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1526449045346</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50647247" side_tool="true" weight="0.32961783" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="2" />
+      <window_info anchor="bottom" id="Python Console" order="3" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.4935275" visible="true" weight="0.330033" />
+      <window_info anchor="bottom" id="Terminal" order="4" weight="0.32838285" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25037822" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Data View" order="4" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="6" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23903178" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info active="true" anchor="bottom" id="Run" order="1" sideWeight="0.4935275" visible="true" weight="0.330033" />
+      <window_info anchor="right" id="Data View" order="4" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="bottom" id="Terminal" order="4" weight="0.32838285" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50647247" side_tool="true" weight="0.32961783" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="2" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="bottom" id="Python Console" order="3" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/web/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="e#262#1294#0" />
+            <element signature="e#1412#1476#0" />
+            <element signature="e#1865#1994#0" />
+            <element signature="e#3813#4030#0" />
+            <element signature="e#4069#4738#0" />
+            <element signature="e#4773#5053#0" />
+            <element signature="e#5085#5289#0" />
+            <element signature="e#5323#6911#0" />
+            <element signature="e#6947#7272#0" />
+            <element signature="e#7312#7632#0" />
+            <element signature="e#7672#7970#0" />
+            <element signature="e#8007#8161#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/takdhum/single_vedio.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/takdhum/single_course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="68" column="173" selection-start-line="68" selection-start-column="173" selection-end-line="68" selection-end-column="173" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2780">
+          <caret line="257" lean-forward="true" selection-start-line="257" selection-end-line="257" />
+          <folding>
+            <element signature="e#262#1294#0" />
+            <element signature="e#1412#1476#0" />
+            <element signature="e#1865#1994#0" />
+            <element signature="e#3813#4030#0" />
+            <element signature="e#4069#4738#0" />
+            <element signature="e#4773#5053#0" />
+            <element signature="e#5085#5289#0" />
+            <element signature="e#5323#6911#0" />
+            <element signature="e#6947#7272#0" />
+            <element signature="e#7312#7632#0" />
+            <element signature="e#7672#7970#0" />
+            <element signature="e#8007#8161#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/takdhum/profile/my_course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="31" column="69" lean-forward="true" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_quiz/test-settings.py" />
+    <entry file="file://$PROJECT_DIR$/django_quiz/tox.ini" />
+    <entry file="file://$PROJECT_DIR$/django_quiz/setup.py" />
+    <entry file="file://$PROJECT_DIR$/django_quiz/runtests.py" />
+    <entry file="file://$PROJECT_DIR$/django_quiz/quiz/templates/question.html" />
+    <entry file="file://$PROJECT_DIR$/quiz/models.py" />
+    <entry file="file://$PROJECT_DIR$/multichoice/models.py" />
+    <entry file="file://$PROJECT_DIR$/quizs/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/acc_active_email.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quizs/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/takdhum/profile/base_profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1139">
+          <caret line="67" column="119" selection-start-line="67" selection-start-column="119" selection-end-line="67" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/quiz/taken_quiz_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/takdhum/search/course_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/quiz/taken_quiz_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="67" column="33" lean-forward="true" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/quiz/student_answer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="26" column="60" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/migrations/0061_question_studentanswer_takenquiz.py" />
+    <entry file="file://$PROJECT_DIR$/web/migrations/0058_studentanswer_takenquiz.py" />
+    <entry file="file://$PROJECT_DIR$/web/migrations/0065_auto_20180518_1339.py" />
+    <entry file="file://$PROJECT_DIR$/takdhum/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#630#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quizs/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/takdhum/profile/user_profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="65" column="14" lean-forward="true" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/takdhum/profile/quize_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/takdhum/profile/profile_settings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="82" column="14" lean-forward="true" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/takdhum/assets/js/coursed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/quiz/taken_quiz_list2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/migrations/0084_watchvideo.py" />
+    <entry file="file://$PROJECT_DIR$/web/migrations/0082_auto_20180525_2048.py" />
+    <entry file="file://$PROJECT_DIR$/web/migrations/0083_auto_20180527_2051.py" />
+    <entry file="file://$PROJECT_DIR$/web/migrations/0085_watchvideo_view.py" />
+    <entry file="file://$PROJECT_DIR$/web/templates/takdhum/profile/my_taken_course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/takdhum/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/migrations/0003_auto_20180611_2018.py" />
+    <entry file="file://$PROJECT_DIR$/web/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/migrations/0003_auto_20180612_1523.py" />
+    <entry file="file://$PROJECT_DIR$/web/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="e#262#1294#0" />
+            <element signature="e#1412#1476#0" />
+            <element signature="e#1865#1994#0" />
+            <element signature="e#3813#4030#0" />
+            <element signature="e#4069#4738#0" />
+            <element signature="e#4773#5053#0" />
+            <element signature="e#5085#5289#0" />
+            <element signature="e#5323#6911#0" />
+            <element signature="e#6947#7272#0" />
+            <element signature="e#7312#7632#0" />
+            <element signature="e#7672#7970#0" />
+            <element signature="e#8007#8161#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/takdhum/single_vedio.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/takdhum/profile/my_course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-416">
+          <caret line="28" column="128" selection-start-line="28" selection-start-column="128" selection-end-line="28" selection-end-column="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/takdhum/profile/watch_vedio.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/takdhum/single_course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="191" column="26" lean-forward="true" selection-start-line="191" selection-start-column="26" selection-end-line="191" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

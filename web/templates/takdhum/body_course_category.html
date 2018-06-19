@@ -1,0 +1,30 @@
+
+
+<div class="col-md-3 col-sm-4 uv-sidebar">
+    <div class="uv-widget uv-course-widget">
+        <div class="widget-title">
+            <h4>Course Categories</h4>
+            <hr>
+        </div>
+        <div class="uv-course-category">
+            <ul>
+                <li>
+                    {% for c in level %}
+                        <li><a href="{% url 'drawing_course' category=tag level=c.url %}"><i class="fa fa-codepen"></i> {{ c.name }} Courses</a></li>
+                    {% endfor %}
+                <!--
+                    <a href="#"><i class="fa fa-android "></i>Android</a>
+                    <a href="#"><i class="fa  fa-html5"></i> HTML</a>
+                    <a href="#"><i class="fa fa-css3"></i> CSS </a>
+                    <a href="#"><i class="fa fa-codepen"></i> Laravel </a>
+                    <a href="#"><i class="fa fa-codepen"></i> Javascript</a>
+                    <a href="#"><i class="fa fa-codepen"></i> Photoshop </a>
+                    <a href="#"><i class="fa fa-codepen"></i> Web Development</a>
+                    <a href="#"><i class="fa fa-codepen"></i> Wordpress </a>
+                 -->
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>

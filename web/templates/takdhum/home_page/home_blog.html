@@ -1,0 +1,42 @@
+{% load staticfiles %}
+
+<!--
+|========================
+|  blog 1
+|========================
+-->
+<section class="uv-blog">
+    <div class="container">
+        <div class="row section-separator">
+            <div class="section-title wow fadeIn col-xs-12" data-wow-delay="0.2s">
+                <h2>Recent Projects</h2>
+                <span>Some of Takdhum recent projects</span>
+                <hr class="uv-hr">
+                <a href="#" class="btn btn-base view-full-event"> View All</a>
+            </div>
+            <div class="each-blogs col-xs-12 wow fadeIn" data-wow-delay="0.3s" id="uv-blog-carousel">
+
+                {% for p in projects %}
+                <div class="item">
+                    <div class="blog-inner">
+                        <div class="blog-banner">
+                            <img src="{{ p.Image.url }}" alt="{{ p.name }}" class="img-responsive">
+                        </div>
+                        <div class="blog-content">
+                            <h4>{{ p.name }}</h4>
+                            <div class="blog-schedule">
+                                <a href="#"><h4>{{ p.name }}</h4></a>
+                                <div class="blog-meta">
+                                    <span><i class="fa fa-calendar-o"></i> {{ p.upload_time }}</span>
+                                </div>
+                                <p>{{ p.description|truncatewords:15 }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<!--
+|========================
+|      Course
+|========================
+-->
+<section class="uv-course image-bg" style="background-image: url({% static "takdhum/assets/images/Takdhum banner2.png" %});">
+    <div class="overlay">
+        <div class="container">
+            <div class="row section-separator">
+                <div class="section-title col-xs-12 wow fadeIn" data-wow-delay="0.2s">
+                    <h2>Our Courses</h2>
+                    <span>The best in our school</span>
+                    <!--<hr class="uv-hr">-->
+                    <!--<a href="{% url 'all_course' %}" class="btn btn-base view-full-event"> View All</a>-->
+                </div>
+                <div class="each-courses col-xs-12 wow fadeIn" id="uv-carousel" data-wow-delay="0.3s">
+                    {% for c in categories %}
+                    <div class="item">
+                        {# <a href="{% url 'single_course' category=c.course_category.category_name course=c.course_url %}"> #}
+                        <a href="{% url 'single_category' category=c.category_url %}">
+                            <div class="course-inner">
+                                <div class="course-banner">
+                                    <img src="{{ c.thumbnail_image.url }}" alt="{{ c.category_name }" class="img-responsive">
+                                </div>
+                                <div class="course-content">
+                                    <h4>{{ c.category_name }}</h4>
+                                    <!--<p>{{ c.course_category.category_name }}</p>-->
+                                    <p>{{ c.description|truncatechars:120 }}</p>
+                                     <a href="{% url 'single_category' category=c.category_url %}" class="btn btn-base">View Now</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

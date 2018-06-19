@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<!--[if IE 7]> <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]> <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="zxx">
+
+
+<head>
+    <!-- TITLE OF SITE -->
+    <title>{% block title %} {% endblock title %} | Takdhum</title>
+
+    <!-- Meta -->
+    {% include 'takdhum/html/meta.html' %}
+
+    <!-- CSS & Font & JS -->
+   {% include 'takdhum/html/head.html' %}
+    {% block css %}
+
+    {% endblock css %}
+
+</head>
+<body>
+<!--
+    |========================
+    |  HEADER
+    |========================
+    -->
+    {% include 'takdhum/html/header.html' %}
+        <!--
+    |========================
+    |  All Body content here
+    |========================
+    -->
+    {% block body %}
+
+
+
+    {% endblock body %}
+
+
+
+    <!--
+    |========================
+    |  footer
+    |========================
+    -->
+    {% include 'takdhum/html/footer.html' %}
+
+
+    <!--
+    |========================
+    |      Script
+    |========================
+    -->
+    {% include 'takdhum/html/script.html' %}
+    {% block script %}
+
+
+
+    {% endblock script %}
+
+</body>
+
+</html>
